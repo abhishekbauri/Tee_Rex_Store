@@ -1,0 +1,13 @@
+.property-name{
+    margin-bottom: 1rem;
+}
+.property-name h3{
+    margin-bottom: .5rem;
+}
+
+.property-field{
+    padding-left: .5rem;
+}
+.property-field label{
+    padding-left: .5rem;
+}
