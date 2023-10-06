@@ -4,9 +4,12 @@ import Filter from '../../Components/filter/filter'
 import SearchInput from '../../Components/serachInput/SearchInput'
 
 import './Product.css'
+import { useSelector } from 'react-redux'
 
 const Product = () => {
     const [cardData, setCardData] = useState([]);
+
+    const isFilter = useSelector(state => state.filterToggle.showFilter);
 
     const findData = async () => {
         const url = `https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json`;
@@ -23,7 +26,6 @@ const Product = () => {
     }
 
     useEffect( ()=> {
-        
         findData();
     },[])
 
@@ -33,7 +35,7 @@ const Product = () => {
             <SearchInput />
         </div>
         <div className='main-section'>
-            <div className='filter-section'>
+            <div className={`filter-section ${isFilter ? 'show-filter': ''}`}>
                 <Filter />
             </div>
             <div className='items-section'>
