@@ -16,86 +16,6 @@
     padding: 1rem;
 }
 
-.cart-items{
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 1rem;
-}
-.items-image{
-    width: 70px;
-    height: 50px;
-    border: 1px solid rgb(97, 95, 95);
-    overflow: hidden;
-}
-.items-image img{
-    width: 70px;
-    height: 50px;
-}
-
-.items-description{
-    width: 75px;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 1rem;
-}
-.items-description h3{
-    font-size: 1rem;
-}
-.items-qunatity{
-    width: fit-content;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-}
-.items-qunatity button{
-    width: 35px;
-    height: 30px;
-    padding: 0.5rem;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(64, 63, 63);
-   
-}
-.items-qunatity h3{
-    width: 35px;
-    height: 30px;
-    font-size: 1rem;
-    padding-top: 6px;
-    background-color: rgb(64, 63, 63);
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-}
-.items-qunatity button:hover{
-    background-color: black;
-}
-
-.delete-items{
-    width: fit-content;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.delete-items button{
-    height: 30px;
-    padding: 0 1rem;
-    border: none;
-    background-color: rgb(64, 63, 63);
-    color: #fff;
-}
-.delete-items button:hover{
-    background-color: black
-}
-
 .total-amount{
     display: flex;
     margin-top: 1rem;
@@ -107,29 +27,13 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 1.5rem;
 }
-
+.empty-cart{
+    text-align: center;
+}
 @media only screen and (max-width: 450px){
     .cart-list{
         width: 95%;
         padding: 0.5rem;
-    }
-    .items-image{
-        width: 50px;
-    }
-    .items-image img{
-        width: 50px;
-    }
-    .items-qunatity button{
-        width: 30px;
-    }
-    .items-description{
-        margin: 0 0.5rem;
-    }
-    .items-description h3, p{
-        font-size: 13px;
-    }
-    .delete-items button{
-        padding: 0 0.5rem;
     }
 }
 

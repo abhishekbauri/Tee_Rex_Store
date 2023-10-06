@@ -57,6 +57,9 @@
         justify-content: center;
         margin-bottom: 1rem;
     }
+    .show-filter{
+        display: flex;
+    }
     .items-section{
         width: 100%;
     }
