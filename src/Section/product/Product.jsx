@@ -1,33 +1,51 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Card from '../../Components/card/Card'
 import Filter from '../../Components/filter/filter'
 import SearchInput from '../../Components/serachInput/SearchInput'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchData } from '../../app/searchFilterSlice'
 
 import './Product.css'
-import { useSelector } from 'react-redux'
 
 const Product = () => {
-    const [cardData, setCardData] = useState([]);
+    
+    const dispatch = useDispatch();
 
     const isFilter = useSelector(state => state.filterToggle.showFilter);
+    const data = useSelector(state => state.searchFilter.data);
 
-    const findData = async () => {
-        const url = `https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json`;
-        try {
-            const res = await fetch(url);
-            if (!res.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await res.json();
-            setCardData(data);
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    const selectedColor = useSelector(state => state.searchFilter.selectedColor);
+    const selectedGender = useSelector(state => state.searchFilter.selectedGender);
+    const selectedType = useSelector(state => state.searchFilter.selectedType);
+    const selectedPrice = useSelector(state => state.searchFilter.selectedPrice);
+    
+    const filteredData = [...selectedColor, ...selectedGender, ...selectedType];
 
     useEffect( ()=> {
-        findData();
-    },[])
+        dispatch(fetchData());
+    },[dispatch])
+
+    function filterByPrice(product, selectedPrice){
+        if(selectedPrice.length === 0) return true;
+        const price = product.price;
+        return selectedPrice.some((range) => {
+          const [min, max=10000] = range.split("-").map(Number);
+          return price >= min && price <= max;
+        });
+    }
+
+    const cardData =
+      data &&
+      data.filter((product) => {
+        return (
+          (selectedColor.length === 0 ||
+            filteredData.includes(product.color)) &&
+          (selectedType.length === 0 || filteredData.includes(product.type)) &&
+          (selectedGender.length === 0 ||
+            filteredData.includes(product.gender)) &&
+          filterByPrice(product, selectedPrice)
+        );
+      });
 
   return (
     <section className='product-section'>
@@ -39,7 +57,7 @@ const Product = () => {
                 <Filter />
             </div>
             <div className='items-section'>
-                {cardData.map( item => (
+                {cardData && cardData.map( item => (
                     <Card {...item} key={item.id}/>
                 ))}
             </div>

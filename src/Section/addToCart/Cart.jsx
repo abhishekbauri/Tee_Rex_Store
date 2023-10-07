@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
+import CartItem from "../../Components/cartItem/CartItem";
 
 import "./Cart.css";
-import CartItem from "../../Components/cartItem/CartItem";
 
 const Cart = () => {
   const totalAmount = useSelector((state) => state.cart.totalItemsPrice);
   const cartItems = useSelector( state => state.cart.items);
-  // console.log("ct->",cartItems)
+
   return (
     <section className="cart-section">
       <div className="cart-header">

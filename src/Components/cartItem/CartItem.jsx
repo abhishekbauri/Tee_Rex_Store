@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-
-import "./CartItem.css";
 import { useDispatch } from "react-redux";
 import { cartAction } from "../../app/cartSlice";
+
+import "./CartItem.css";
 
 const CartItem = (props) => {
   const {
