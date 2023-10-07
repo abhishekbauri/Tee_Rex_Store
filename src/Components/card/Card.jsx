@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
-
 import { useDispatch } from "react-redux";
-import "./Card.css";
 import { cartAction } from "../../app/cartSlice";
+
+import "./Card.css";
+
 const Card = (props) => {
   const dispatch = useDispatch();
   const { name, imageURL, price, quantity, gender, color, type, id } = props;

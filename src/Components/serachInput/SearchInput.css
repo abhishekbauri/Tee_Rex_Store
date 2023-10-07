@@ -3,6 +3,11 @@
     display: flex;
     justify-content: space-between;
 }
+.search-input-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .input-box{
     width: 80%;
 }
@@ -62,14 +67,14 @@
     .search-items{
         justify-content: center;
     }
-    .input-box{
+    .search-input-box{
         width: 60%;
     }
     .input-box input{
         font-size: 1rem;
     }
     .search-icon{
-        width: 10%;
+        width: 17%;
         font-size: 1rem;
     }
     .filter-icon{
