@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import Card from '../../Components/card/Card'
-import Filter from '../../Components/filter/filter'
+import Filter from '../../Components/filter/Filter'
 import SearchInput from '../../Components/serachInput/SearchInput'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from '../../app/searchFilterSlice'

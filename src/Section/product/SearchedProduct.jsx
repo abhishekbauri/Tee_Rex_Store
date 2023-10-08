@@ -1,5 +1,5 @@
 import Card from "../../Components/card/Card";
-import Filter from "../../Components/filter/filter";
+import Filter from "../../Components/filter/Filter";
 import ErrorPage from "../../Components/errorPage/ErrorPage";
 import SearchInput from "../../Components/serachInput/SearchInput";
 import { useSelector } from "react-redux";
