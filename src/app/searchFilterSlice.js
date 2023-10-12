@@ -10,7 +10,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   data: null, // all data are stored from api
-  searchedData: null,
+  searchedData: [],
   value: "",
   selectedColor: [], // contains all selected color
   selectedGender: [], // contains all selected gender
