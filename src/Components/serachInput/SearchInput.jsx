@@ -17,7 +17,7 @@ const SearchInput = () => {
   const searchHandler = (e) => {
     e.preventDefault();
     if(inputValue.length === 0){
-      alert("Please enter something to search");
+      return alert("Please enter something to search");
     }else{
       dispatch(searchFilterAction.search(inputValue));
       setInputValue("");
